@@ -17,24 +17,35 @@ public class Condition {
         System.out.print("What Operations Do You Want To Perform? ");
         String Operation = scanner.nextLine();
 
-        if (Operation.equals("sum")) {
-        System.out.printf("%f + %f = %f ", number1, number2 , number1 + number2);}
-        else if (Operation.equals("sub")) {
-         System.out.printf("%f - %f = %f ", number1, number2 , number1 - number2);}
-        else if(Operation.equals("mul")) {
-            System.out.printf("%f * %f = %f ", number1, number2 , number1 * number2);
-        }
-        else if(Operation.equals("div")){
-            if(number2 == 0) {
-                System.out.printf("Can not divided by zero");
-            } else {
-                System.out.printf("%f / %f = %f ", number1, number2 , number1 / number2);
-            }
+        switch(Operation) {
+            case "sum":
+                System.out.printf("%f + %f = %f ", number1, number2 , number1 + number2);
+                break;
+
+            case"sub":
+                System.out.printf("%f - %f = %f ", number1, number2 , number1 - number2);
+                break;
+
+            case"mul":
+                System.out.printf("%f * %f = %f ", number1, number2 , number1 * number2);
+                break;
+
+            case"div":
+                if(number2 == 0) {
+                    System.out.printf("Can not divided by zero");}
+                else {
+                    System.out.printf("%f / %f = %f ", number1, number2 , number1 / number2);}
+                break;
+
+            default:
+                System.out.printf("%s is not a supported Operation. ", Operation);
         }
 
-        else {
-            System.out.printf("%s is not a supported Operation. ", Operation);
-        }
 
+
+
+
+       
     }
 }
+
